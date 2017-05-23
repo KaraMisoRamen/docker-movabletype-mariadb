@@ -1,0 +1,13 @@
+web:
+  build: ./data/apache
+  container_name: web
+  ports:
+    - "80:80"
+  links:
+    - db
+
+db:
+  build: ./database
+  container_name: db
+  ports:
+    - "3306:3306"
